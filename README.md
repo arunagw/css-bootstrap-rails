@@ -4,13 +4,23 @@ It includes base CSS and HTML for typography, forms, buttons, tables, grids, nav
 css-bootstrap-rails project integrates Bootstrap CSS toolkit for Rails 3 projects
 
 ## Rails 3.1
-Include Bootstrap in Gemfile, 
+Include Bootstrap in Gemfile,
 
     gem 'css-bootstrap-rails'
 
 and add bootstrap in manifest file css file. Add into application.css
 
     *= require bootstrap
+
+to use the bootstrap javascript add the ones you want to application.js
+
+    //= require bootstrap/alerts
+    //= require bootstrap/dropdown
+    //= require bootstrap/modal
+    //= require bootstrap/popover
+    //= require bootstrap/scrollspy
+    //= require bootstrap/tabs
+    //= require bootstrap/twipsy
 
 ## Thanks
 Thanks Twitter for Bootstrap
