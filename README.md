@@ -14,13 +14,17 @@ and add bootstrap in manifest file css file. Add into application.css
 
 to use the bootstrap javascript add the ones you want to application.js
 
+    //= require bootstrap/transition
     //= require bootstrap/alerts
-    //= require bootstrap/dropdown
     //= require bootstrap/modal
-    //= require bootstrap/popover
+    //= require bootstrap/dropdown
     //= require bootstrap/scrollspy
     //= require bootstrap/tabs
     //= require bootstrap/twipsy
+    //= require bootstrap/popover
+    //= require bootstrap/button
+    //= require bootstrap/carousel
+    //= require bootstrap/collapse
 
 ## Thanks
 Thanks Twitter for Bootstrap
