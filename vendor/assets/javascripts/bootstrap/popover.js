@@ -1,5 +1,5 @@
 /* ===========================================================
- * bootstrap-popover.js v1.4.0
+ * bootstrap-popover.js v2.0.0
  * http://twitter.github.com/bootstrap/javascript.html#popover
  * ===========================================================
  * Copyright 2011 Twitter, Inc.
@@ -34,10 +34,16 @@
 
   Popover.prototype = $.extend({}, $.fn.twipsy.Twipsy.prototype, {
 
-    setContent: function () {
+    constructor: Popover
+
+  , setContent: function () {
       var $tip = this.tip()
-      $tip.find('.title')[this.options.html ? 'html' : 'text'](this.getTitle())
-      $tip.find('.content p')[this.options.html ? 'html' : 'text'](this.getContent())
+        , title = this.getTitle()
+        , content = this.getContent()
+
+      $tip.find('.title')[ $.type(title) == 'object' ? 'append' : 'html' ](title)
+      $tip.find('.content > *')[ $.type(content) == 'object' ? 'append' : 'html' ](content)
+
       $tip[0].className = 'popover'
     }
 
@@ -51,10 +57,11 @@
        , o = this.options
 
       if (typeof this.options.content == 'string') {
-        content = this.options.content
+        content = $e.attr(this.options.content)
       } else if (typeof this.options.content == 'function') {
         content = this.options.content.call(this.$element[0])
       }
+
       return content
     }
 
@@ -80,7 +87,10 @@
 
   $.fn.popover.defaults = $.extend({} , $.fn.twipsy.defaults, {
     placement: 'right'
+  , content: 'data-content'
   , template: '<div class="arrow"></div><div class="inner"><h3 class="title"></h3><div class="content"><p></p></div></div>'
   })
 
-}( window.jQuery || window.ender );
+  $.fn.twipsy.rejectAttrOptions.push( 'content' )
+
+}( window.jQuery || window.ender )
