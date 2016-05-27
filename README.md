@@ -6,7 +6,7 @@ css-bootstrap-rails project integrates Bootstrap CSS toolkit for Rails 3 project
 ## Rails 3.1
 Include Bootstrap in Gemfile,
 
-    gem 'css-bootstrap-rails'
+    $ gem 'css-bootstrap-rails'
 
 and add bootstrap in manifest file css file. Add into application.css
 
